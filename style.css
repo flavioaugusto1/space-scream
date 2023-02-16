@@ -1,0 +1,157 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    font-size: 62.5%;
+
+    --font-size-heading: clamp(2.0rem, 2.5rem + 10vw, 3.5rem);
+    --font-size-texting: clamp(0.2rem, 0.8rem + 2vw, 2.0rem);
+
+    --line-height: 3.4rem;
+    --line-height-texting: 2.5rem;
+
+    --background-heading: #8E9AAF;
+    --background-content: #EFF1FF;
+    --background-title-heading: #CBC0D3;
+    --background-title-card: #FEEAFA;
+
+    --color-title: #FFFFFF;
+    --color-description: #23053A;
+    --color-title-cards: #4A4E69;
+}
+
+/* Fonts */
+body {
+    font-family: 'Palanquin', sans-serif;
+}
+
+h1, span {
+    font-family: 'Staatliches', cursive;
+}
+
+.page {
+    max-width: 385px;
+
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+header {
+    min-width: 384px;
+    max-height: 384px;
+
+    background: var(--background-heading);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+header img {
+    margin: 3.2rem auto 3.2rem;
+}
+
+header h1 {
+    min-width: 384px;
+    margin-bottom: 3.0rem;
+    padding: 0.8rem 8.6rem;
+
+    font-size: var(--font-size-heading);
+    line-height: var(--line-height);
+    color: var(--color-title);
+
+    text-align: center;
+    letter-spacing: 3px;
+    background: var(--background-title-heading);
+}
+
+main {
+    min-width: 384px;
+    background: var(--background-content);
+}
+
+.wrapper-content {
+    width: clamp(30rem, 33rem + 5vh, 38.5rem);
+    margin: auto;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1.4rem 3.2rem 6.0rem;
+}
+
+.wrapper-content p {
+    font-size: var(--font-size-texting);
+    line-height: var(--line-height-texting);
+
+    color: var(--color-description);
+
+    text-align: center;
+    margin-bottom: 6.3rem;
+
+}
+
+.card {
+    position: relative;
+    max-width: 320px;
+    margin-bottom: 3.6rem;
+}
+
+.card img {
+    width: 100%;
+    animation: downtop 800ms 200ms backwards;
+    object-fit: cover;
+}
+
+.card span {
+    position: absolute;
+    padding: 0 2.4rem;
+
+    font-size: var(--font-size-texting);
+
+    top: 1.6rem;
+    right: 1.6rem;
+
+    border-radius: 20px;
+
+    color: var(--color-title-cards);
+    background: var(--background-title-card);
+
+    animation: topdown 800ms 200ms backwards;
+}
+
+@media (min-width: 390px) {
+    .page {
+        margin: auto;
+
+    }
+}
+
+@keyframes topdown {
+    0% {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes downtop {
+    0% {
+        opacity: 0;
+        transform: translateY(16px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
